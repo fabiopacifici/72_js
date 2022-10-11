@@ -1,0 +1,15 @@
+.container {
+  margin: 2rem auto;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem
+}
+
+.box {
+  width: calc((100% / 10) - 0.25rem);
+  aspect-ratio: 1 / 1;
+  background-color: paleturquoise;
+  line-height: 116px;
+  text-align: center;
+}
