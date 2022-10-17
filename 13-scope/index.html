@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+  </head>
+  <body>
+
+
+    <script>
+
+    
+      for (let index = 0; index < 10; index++) {
+      console.log(index);
+      }
+
+      const index = 10
+      
+      if(index === 10) {
+      console.log(index);
+      }
+
+
+
+      a = 0; // 0
+      b = "buongiorno" // buongiorno
+      var c = "ciao"; // ciao
+      
+      saluta(); // 0 1 ciao
+      
+      console.log("a is " + a); // 0
+      console.log("b is " + b); // buongiorno
+      
+      function saluta() {
+      var d = "asd"; // asd
+      console.log("a is " + a); // 0
+      var b = a + 1;
+      console.log("b is " + b); // 1
+      console.log(c); // ciao
+      }
+
+  </script>
+  </body>
+</html>
