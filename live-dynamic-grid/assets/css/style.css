@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1142px;
+  margin: 3rem auto;
+}
+
+.cell {
+  width: calc(100% / 8);
+  aspect-ratio: 1/1;
+  border: 2px solid white;
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell.active {
+  background-color: palegreen;
+}
+
+.cell.active-red {
+  background-color: palevioletred;
+}
