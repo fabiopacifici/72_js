@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 3rem auto;
+}
+
+.cell {
+  /* Da togliere da qui 
+  width: calc(100% / 10);*/
+  aspect-ratio: 1/1;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell.active {
+  background-color: blue;
+}
