@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Document</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'
+    integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=='
+    crossorigin='anonymous' referrerpolicy='no-referrer' />
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet'
+    integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' crossorigin='anonymous'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'
+    integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=='
+    crossorigin='anonymous' referrerpolicy='no-referrer' />
+  <link href='./assets/css/app.css' rel='stylesheet'>
+</head>
+
+<body>
+  <div id='app'>
+
+    <h1 class="title">{{movie.title}}</h1>
+
+    <div class="container">
+      <div class="card movie position-relative" @mouseenter="stopAutoPlay" @mouseleave="startAutoPlay">
+        <div class="status position-absolute top-0 end-0 p-2 text-primary">
+          <i class="fa-solid fa-play-circle fa-sm fa-fw" v-if="play"></i>
+          <i class="fa-solid fa-pause-circle fa-sm fa-fw" v-else></i>
+
+        </div>
+        <img :src="movie.images[activeImage]" alt="">
+
+        <div class="thumbnails">
+          <img class="thumb" :class=" activeImage === i ? 'active' : '' " :src="thumb" alt=""
+            v-for="(thumb, i) in movie.images" @click="changeImage(i)">
+        </div>
+
+        <div class="navigator">
+          <div class="prev" @click="prevImage">
+            <i class="fa-solid fa-chevron-left"></i>
+          </div>
+          <div class="next" @click="nextImage">
+            <i class="fa-solid fa-chevron-right">
+            </i>
+          </div>
+        </div>
+        <div class="details">
+          <h3 class="title">{{movie.title}}</h3>
+          <div>Category: {{movie.category}}</div>
+          <small>Lenght: {{movie.length}} min</small>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- Development only cdn, disable in production -->
+  <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+  <script src='./assets/js/app.js'></script>
+</body>
+
+</html>

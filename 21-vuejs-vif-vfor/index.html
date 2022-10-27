@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Document</title>
+
+</head>
+
+<body>
+  <div id='app'>
+    <h1>Hello World</h1>
+    <button @click="showText">Change text</button>
+
+    <h3>V-if/else</h3>
+
+    <p v-if="is_visible">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium sapiente labore, ab et
+      error officia cum, corporis quas sit maiores iste soluta omnis dolorum nemo natus recusandae. Laudantium, nisi
+      quod?
+    </p>
+
+    <p v-else>Ciao lorem ipsum</p>
+
+    <!-- Direttiva v-show -->
+    <h3>V-show</h3>
+    <p v-show="is_visible">
+      Show Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae modi autem eligendi maxime fugiat
+      sapiente hic eos illo, numquam aspernatur laboriosam doloribus, maiores deserunt aperiam dolore quisquam ipsa. At,
+      quis?
+    </p>
+    <!-- V-if su template -->
+
+    <template v-if="is_visible">
+      <h3>V-if con template</h3>
+      <p>Paragraph 1</p>
+      <p>Paragraph 2</p>
+    </template>
+
+
+    <h2>V-for</h2>
+
+    <ul>
+      <li v-for="movie in movies">
+        {{movie.name}}
+      </li>
+    </ul>
+
+  </div>
+  <!-- Development only cdn, disable in production -->
+  <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+  <script src='./app.js'></script>
+</body>
+
+</html>
